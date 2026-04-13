@@ -1,0 +1,60 @@
+    <!doctype html>
+    <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            let distanciaTrabalho, consumoVeiculo;
+            
+            let qtdPostos;
+            let entradaValor;
+            let menorValor = Infinity;
+            let contagemPosto = 0;
+            let somaTotalValores = 0;
+        //Distancia e Consumo
+
+            do {
+            distanciaTrabalho = parseFloat(prompt(`Qual a distância percorrida da sua casa até seu trabalho (em Km)`));
+        } while (isNaN(distanciaTrabalho) || distanciaTrabalho <= 0);
+
+        do {
+            consumoVeiculo = parseFloat(prompt(`Qual o consumo médio do seu veículo (em Km/L)`));
+        } while (isNaN(consumoVeiculo) || consumoVeiculo <= 0);
+
+        //calculos Litros de gasolina gasto pro trabalho
+        let consumoNecessarioLitros = distanciaTrabalho / consumoVeiculo;
+
+        //posto de combustiveis
+        
+        do {
+            qtdPostos = parseInt(prompt(`Em quantos postos você pesquisou`));
+        } while (isNaN(qtdPostos) || qtdPostos <= 0);
+
+        for(let i=1;i<=qtdPostos;i++){
+            contagemPosto++;
+            do {
+            entradaValor = parseFloat(prompt(`Digite o valor encontrado (em R$) no ${contagemPosto}º posto`));
+            } while (isNaN(entradaValor) || entradaValor <= 0);
+            somaTotalValores += entradaValor;
+            if (menorValor > entradaValor) {
+            menorValor = entradaValor;
+            }
+            console.log(menorValor);
+        }
+
+        //calculos com os valores de combustivel
+        let mediaValorCombustivel = somaTotalValores / qtdPostos;
+        let gastoDiario = 2 * (consumoNecessarioLitros * menorValor);
+
+        //print final
+
+        document.write(`O consumo necessários é ${consumoNecessarioLitros} litros<br><br>`,);
+        document.write(`O menor valor pesquisado é R$ ${menorValor}<br><br>`);
+        document.write(`A média dos valores pesquisados é R$ ${mediaValorCombustivel}<br><br>`);
+        document.write(`O gasto diário (ida e volta) é R$ ${gastoDiario}`);
+        </script>
+    </body>
+    </html>
