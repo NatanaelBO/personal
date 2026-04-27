@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+            
+}
+
+conteudohome{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+footer{
+    background-color: #1b357e;
+    
+}
