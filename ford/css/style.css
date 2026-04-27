@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 body{
     min-height: 100vh;
@@ -10,13 +11,55 @@ body{
             
 }
 
-conteudohome{
+header{
+    display: flex;
+    justify-content: space-between;
+    height: 10%;
+    padding: 10px 50px;
+    
+}
+
+.header__menu{
+    display: flex;
+    
+}
+
+.header__menu__link{
+    
+}
+
+.conteudohome{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+    
 }
 
 footer{
     background-color: #1b357e;
     
+}
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0;
+    padding: 0.1% 0 ;
+    
+}
+
+.footer__redes{
+    display: flex;
+    align-items: center;
+    padding: 0 1%;
+    color: white;
+}
+
+.footericon img {
+  width: 50%;  
+  height: auto;
+  padding: 0 25% ; 
 }
